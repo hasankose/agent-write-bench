@@ -1,0 +1,105 @@
+[
+  {
+    "id": "control-single-click",
+    "site": "https://www.deathwishcoffee.com/products/death-grip-bottle-opener",
+    "instruction": "Add this product to the cart",
+    "verify_hint": "cart shows 1 item; must survive reload",
+    "verify_url": "https://www.deathwishcoffee.com/cart",
+    "why": "CONTROL — product page, single variant, nothing to select, one button. If the harness cannot do this, the harness is broken.",
+    "max_steps": 2
+  },
+  {
+    "id": "allbirds-cart",
+    "site": "https://www.allbirds.com/collections/mens-shoes",
+    "instruction": "Add the first available men's shoe in any in-stock size to the cart",
+    "verify_hint": "cart badge increments; must survive reload",
+    "why": "newsletter modal on load, animated cart drawer, optimistic badge",
+    "verify_url": "https://www.allbirds.com/cart",
+    "max_steps": 5
+  },
+  {
+    "id": "gymshark-cart",
+    "site": "https://www.gymshark.com/collections/all-products/mens",
+    "instruction": "Add the first available men's item in any in-stock size to the cart",
+    "verify_hint": "cart count increments; must survive reload",
+    "why": "region/consent interstitial, heavy client-side cart",
+    "verify_url": "https://www.gymshark.com/cart",
+    "max_steps": 5
+  },
+  {
+    "id": "deathwish-cart",
+    "site": "https://www.deathwishcoffee.com/collections/coffee",
+    "instruction": "Add the first coffee product to the cart",
+    "verify_hint": "cart count increments; must survive reload",
+    "why": "aggressive discount popups over the add-to-cart button",
+    "verify_url": "https://www.deathwishcoffee.com/cart",
+    "max_steps": 4
+  },
+  {
+    "id": "deathwish-largest",
+    "site": "https://www.deathwishcoffee.com/collections/coffee",
+    "instruction": "Add the first available coffee product in the largest available size to the cart",
+    "verify_hint": "cart count increments; must survive reload",
+    "why": "size selector modal, optimistic cart",
+    "verify_url": "https://www.deathwishcoffee.com/cart",
+    "max_steps": 6
+  },
+  {
+    "id": "apple-bag",
+    "site": "https://www.apple.com/shop/buy-mac/macbook-air",
+    "instruction": "Add the base MacBook Air to the bag with the default configuration",
+    "verify_hint": "bag count = 1; must survive reload",
+    "why": "CONTROL — server-backed bag, clean DOM, expected to pass",
+    "verify_url": "https://www.apple.com/shop/bag",
+    "max_steps": 8
+  },
+  {
+    "id": "allbirds-qty",
+    "site": "https://www.allbirds.com/collections/mens-shoes",
+    "instruction": "Add the first available men's shoe to the cart, then change its quantity to 2",
+    "verify_hint": "cart shows quantity 2; must survive reload",
+    "why": "two sequential writes — second often lands on a stale drawer",
+    "verify_url": "https://www.allbirds.com/cart",
+    "max_steps": 8
+  },
+  {
+    "id": "gymshark-two-items",
+    "site": "https://www.gymshark.com/collections/all-products/mens",
+    "instruction": "Add two different men’s items to the cart",
+    "verify_hint": "cart count = 2; must survive reload",
+    "why": "multi-step; the second add frequently hits the open cart drawer",
+    "verify_url": "https://www.gymshark.com/cart",
+    "max_steps": 8
+  },
+  {
+    "id": "gymshark-filter",
+    "site": "https://www.gymshark.com/collections/all-products/mens",
+    "instruction": "Filter the product list to show only size medium",
+    "verify_hint": "filter is applied and reflected in the URL or filter chips; must survive reload",
+    "why": "filter state is often client-only and lost on reload",
+    "verify_url": null,
+    "max_steps": 4,
+    "skip": true,
+    "skip_reason": "no ground-truth page: worked() returns null, so the verdict is INCONCLUSIVE by construction. Needs a real persistence check designed before it is worth spending quota on."
+  },
+  {
+    "id": "deathwish-subscribe-select",
+    "site": "https://www.deathwishcoffee.com/collections/coffee",
+    "instruction": "Open the first coffee product and switch the purchase option to subscription instead of one-time purchase",
+    "verify_hint": "subscription option is selected; must survive reload",
+    "why": "radio/toggle state, optimistic UI, frequently resets",
+    "verify_url": null,
+    "max_steps": 6,
+    "skip": true,
+    "skip_reason": "no ground-truth page: worked() returns null, so the verdict is INCONCLUSIVE by construction. Needs a real persistence check designed before it is worth spending quota on."
+  },
+  {
+    "id": "apple-config",
+    "site": "https://www.apple.com/shop/buy-mac/macbook-air",
+    "instruction": "Configure the MacBook Air with 24GB unified memory, then add it to the bag",
+    "verify_hint": "bag contains a MacBook Air with 24GB memory; must survive reload",
+    "why": "multi-step config — memory upgrade is a separate selection before add-to-bag",
+    "verify_url": "https://www.apple.com/shop/bag",
+    "max_steps": 10
+  }
+]

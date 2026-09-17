@@ -1,0 +1,147 @@
+{
+  "run_id": "apple-config--jevonly--rep1",
+  "task": "apple-config",
+  "instruction": "Configure the MacBook Air with 24GB unified memory, then add it to the bag",
+  "site": "https://www.apple.com/shop/buy-mac/macbook-air",
+  "verify_url": "https://www.apple.com/shop/bag",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:27:01.754Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "a81b56ab8f0d5d8e",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.71,
+        "target_index": "25",
+        "target_confidence": 0.29,
+        "target": "button: Shopping Bag"
+      }
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "9161197be28280ed",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.74,
+        "target_index": "27",
+        "target_confidence": 0.36,
+        "target": "link: MacBook Air"
+      }
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "9161197be28280ed",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.74,
+        "target_index": "25",
+        "target_confidence": 0.31,
+        "target": "button: Shopping Bag"
+      }
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "9161197be28280ed",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.77,
+        "target_index": "27",
+        "target_confidence": 0.35,
+        "target": "link: MacBook Air"
+      }
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "9161197be28280ed",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.81,
+        "target_index": "25",
+        "target_confidence": 0.31,
+        "target": "button: Shopping Bag"
+      }
+    },
+    {
+      "n": 6,
+      "candidates": 40,
+      "before_fingerprint": "fa72cd2c072740ba",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.76,
+        "target_index": "27",
+        "target_confidence": 0.39,
+        "target": "link: MacBook Air"
+      }
+    },
+    {
+      "n": 7,
+      "candidates": 40,
+      "before_fingerprint": "10669d32bce61961",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.76,
+        "target_index": "27",
+        "target_confidence": 0.44,
+        "target": "link: MacBook Air"
+      }
+    },
+    {
+      "n": 8,
+      "candidates": 40,
+      "before_fingerprint": "682aed49232c5661",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.68,
+        "target_index": "25",
+        "target_confidence": 0.27,
+        "target": "button: Shopping Bag"
+      }
+    },
+    {
+      "n": 9,
+      "candidates": 40,
+      "before_fingerprint": "682aed49232c5661",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.71,
+        "target_index": "25",
+        "target_confidence": 0.29,
+        "target": "button: Shopping Bag"
+      }
+    },
+    {
+      "n": 10,
+      "candidates": 40,
+      "before_fingerprint": "682aed49232c5661",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.79,
+        "target_index": "25",
+        "target_confidence": 0.34,
+        "target": "button: Shopping Bag"
+      }
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.apple.com/shop/bag",
+    "landed": false,
+    "tree_bytes": 11581,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 16478,
+    "output": 3780,
+    "calls": 10
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:27:12.556Z"
+}

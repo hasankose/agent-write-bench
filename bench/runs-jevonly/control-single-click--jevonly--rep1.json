@@ -1,0 +1,63 @@
+{
+  "run_id": "control-single-click--jevonly--rep1",
+  "task": "control-single-click",
+  "instruction": "Add this product to the cart",
+  "site": "https://www.deathwishcoffee.com/products/death-grip-bottle-opener",
+  "verify_url": "https://www.deathwishcoffee.com/cart",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:24:25.953Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 39,
+      "before_fingerprint": "3835910c2d25e32b",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 1,
+        "target_index": "20",
+        "target_confidence": 1,
+        "target": "button: ADD TO CART"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[5]/product-form[1]/form[1]/div[1"
+      },
+      "after_fingerprint": "aeb986e3fd3ce070",
+      "dom_changed": true
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "aeb986e3fd3ce070",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.99,
+        "target_index": "21",
+        "target_confidence": 1,
+        "target": "button: ADD TO CART"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[5]/product-form[1]/form[1]/div[1"
+      },
+      "after_fingerprint": "565239c1ef41f186",
+      "dom_changed": true
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.deathwishcoffee.com/cart",
+    "landed": true,
+    "tree_bytes": 10709,
+    "attempts": 2
+  },
+  "jev_usage": {
+    "input": 3263,
+    "output": 744,
+    "calls": 2
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:24:36.950Z"
+}

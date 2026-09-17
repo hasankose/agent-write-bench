@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" font-family="ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif">
+  <style>
+    .box   { fill: none; stroke: #8b8b8b; stroke-width: 1.5; rx: 6; }
+    .claim { stroke: #c2683a; }
+    .truth { stroke: #3a7ca5; }
+    .t     { fill: #8b8b8b; font-size: 13px; }
+    .lbl   { fill: #c2683a; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    .lbl2  { fill: #3a7ca5; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    .mono  { font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12.5px; }
+    .big   { fill: #8b8b8b; font-size: 14px; font-weight: 600; }
+    .arrow { stroke: #8b8b8b; stroke-width: 1.5; fill: none; marker-end: url(#a); }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8b8b8b"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="28" class="big">One run, two channels — never mixed</text>
+
+  <rect x="24" y="52" width="180" height="54" class="box"/>
+  <text x="114" y="76" class="t" text-anchor="middle">agent performs</text>
+  <text x="114" y="94" class="t mono" text-anchor="middle">act("add to cart")</text>
+
+  <path d="M204 68 L300 68" class="arrow"/>
+  <path d="M204 92 L300 132" class="arrow"/>
+
+  <text x="316" y="46" class="lbl">CHANNEL 1 — THE CLAIM</text>
+  <rect x="316" y="54" width="300" height="52" class="box claim"/>
+  <text x="332" y="76" class="t mono">success: true</text>
+  <text x="332" y="94" class="t">"click performed successfully"</text>
+
+  <text x="316" y="128" class="lbl2">CHANNEL 2 — THE PAGE</text>
+  <rect x="316" y="136" width="300" height="72" class="box truth"/>
+  <text x="332" y="158" class="t">accessibility tree, fingerprinted</text>
+  <text x="332" y="176" class="t">before · after · after reload</text>
+  <text x="332" y="194" class="t">…then <tspan font-weight="600">the cart page itself</tspan></text>
+
+  <path d="M466 208 L466 244" class="arrow"/>
+  <rect x="316" y="250" width="300" height="60" class="box"/>
+  <text x="466" y="272" class="t" text-anchor="middle">compare</text>
+  <text x="466" y="292" class="t mono" text-anchor="middle">"Your cart is empty."</text>
+
+  <text x="24" y="270" class="t" text-anchor="start">The agent is never</text>
+  <text x="24" y="288" class="t" text-anchor="start">asked what happened.</text>
+</svg>

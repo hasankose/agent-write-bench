@@ -1,0 +1,123 @@
+{
+  "run_id": "apple-bag--jevonly--rep1",
+  "task": "apple-bag",
+  "instruction": "Add the base MacBook Air to the bag with the default configuration",
+  "site": "https://www.apple.com/shop/buy-mac/macbook-air",
+  "verify_url": "https://www.apple.com/shop/bag",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:26:05.120Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "fa95c725370b670f",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.61,
+        "target_index": "34",
+        "target_confidence": 0.54,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "4f9f69f225bfe56c",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.62,
+        "target_index": "35",
+        "target_confidence": 0.51,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "4f9f69f225bfe56c",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.64,
+        "target_index": "35",
+        "target_confidence": 0.42,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "4f9f69f225bfe56c",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.62,
+        "target_index": "35",
+        "target_confidence": 0.48,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "4f9f69f225bfe56c",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.68,
+        "target_index": "35",
+        "target_confidence": 0.52,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 6,
+      "candidates": 40,
+      "before_fingerprint": "4f9f69f225bfe56c",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.64,
+        "target_index": "35",
+        "target_confidence": 0.49,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 7,
+      "candidates": 40,
+      "before_fingerprint": "84b3a46b0a8fec60",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.61,
+        "target_index": "35",
+        "target_confidence": 0.5,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    },
+    {
+      "n": 8,
+      "candidates": 40,
+      "before_fingerprint": "87d30e2d802854cd",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.62,
+        "target_index": "34",
+        "target_confidence": 0.61,
+        "target": "radio: 13-inch Footnote  1 Buy from $1299 or $108.25 per month for 12 months Footnote  # Lease fr"
+      }
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.apple.com/shop/bag",
+    "landed": false,
+    "tree_bytes": 9844,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 13072,
+    "output": 3024,
+    "calls": 8
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:26:13.485Z"
+}

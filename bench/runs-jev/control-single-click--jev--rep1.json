@@ -1,0 +1,61 @@
+{
+  "run_id": "control-single-click--jev--rep1",
+  "task": "control-single-click",
+  "instruction": "Add this product to the cart",
+  "site": "https://www.deathwishcoffee.com/products/death-grip-bottle-opener",
+  "verify_url": "https://www.deathwishcoffee.com/cart",
+  "framework": "stagehand-observe + jev-decide",
+  "model": "jev-latest",
+  "observe_model": "google/gemini-flash-lite-latest",
+  "started_at": "2026-09-17T21:17:50.243Z",
+  "steps": [
+    {
+      "n": 1,
+      "before_fingerprint": "bab69fad40cd73e7",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.96,
+        "target_index": "1",
+        "target_confidence": 1,
+        "target_description": "ADD TO CART button for the Death Grip Bottle Opener"
+      },
+      "executed": {
+        "success": true,
+        "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[5]/product-form[1]/form[1]/div[1]/button[1]"
+      },
+      "after_fingerprint": "bab69fad40cd73e7",
+      "dom_changed": false
+    },
+    {
+      "n": 2,
+      "before_fingerprint": "24bc106566a3721a",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.96,
+        "target_index": "1",
+        "target_confidence": 1,
+        "target_description": "Add to cart button for the Death Grip Bottle Opener"
+      },
+      "executed": {
+        "success": true,
+        "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[5]/product-form[1]/form[1]"
+      },
+      "after_fingerprint": "24bc106566a3721a",
+      "dom_changed": false
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.deathwishcoffee.com/cart",
+    "landed": true,
+    "tree_bytes": 10709,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 938,
+    "output": 142,
+    "calls": 2
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:18:01.344Z"
+}

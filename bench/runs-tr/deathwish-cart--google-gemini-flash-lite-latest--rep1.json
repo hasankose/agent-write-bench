@@ -1,0 +1,106 @@
+{
+  "run_id": "deathwish-cart--google-gemini-flash-lite-latest--rep1",
+  "task": "deathwish-cart",
+  "instruction": "Add the first coffee product to the cart",
+  "site": "https://www.deathwishcoffee.com/collections/coffee",
+  "verify_url": "https://www.deathwishcoffee.com/cart",
+  "framework": "stagehand+truereplay",
+  "model": "google/gemini-flash-lite-latest",
+  "started_at": "2026-09-17T19:10:06.690Z",
+  "truereplay": {
+    "run_verdict": "inconclusive",
+    "steps": [
+      {
+        "kind": "nav",
+        "action": "goto https://www.deathwishcoffee.com/collections/coffee",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": null,
+          "confidence": "high",
+          "detail": "",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": null
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first coffee product to the cart",
+        "verdict": "landed",
+        "settled": false,
+        "session": {
+          "obstruction": null,
+          "confidence": "high",
+          "detail": "",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": true,
+          "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[2]/product-form[1]/form[1]/div[1]/button[1]"
+        }
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first coffee product to the cart",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": "overlay",
+          "confidence": "heuristic",
+          "detail": "overlay:rebuy-cart__background",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": true,
+          "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[6]/product-form[1]/form[1]/div[1]/button[1]"
+        }
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first coffee product to the cart",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": "overlay",
+          "confidence": "heuristic",
+          "detail": "overlay:rebuy-cart__background",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": true,
+          "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[6]/product-form[1]/form[1]/div[1]/button[1]"
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "url": "https://www.deathwishcoffee.com/cart",
+    "landed": true,
+    "empty_node": false,
+    "line_item": true,
+    "tree_bytes": 13553
+  },
+  "agreement": "inconclusive (TrueReplay: inconclusive)",
+  "errors": [],
+  "finished_at": "2026-09-17T19:10:53.027Z"
+}

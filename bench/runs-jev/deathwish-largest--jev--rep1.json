@@ -1,0 +1,105 @@
+{
+  "run_id": "deathwish-largest--jev--rep1",
+  "task": "deathwish-largest",
+  "instruction": "Add the first available coffee product in the largest available size to the cart",
+  "site": "https://www.deathwishcoffee.com/collections/coffee",
+  "verify_url": "https://www.deathwishcoffee.com/cart",
+  "framework": "stagehand-observe + jev-decide",
+  "model": "jev-latest",
+  "observe_model": "google/gemini-flash-lite-latest",
+  "started_at": "2026-09-17T21:19:23.171Z",
+  "steps": [
+    {
+      "n": 1,
+      "before_fingerprint": "a043d63d20f17367",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.6,
+        "target_index": "16",
+        "target_confidence": 0.7,
+        "target_description": "Add to Cart button for Power Surge Coffee"
+      },
+      "executed": {
+        "success": true,
+        "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[2]/product-form[1]/form[1]/div[1]/button[1]"
+      },
+      "after_fingerprint": "2be88ca4242c76e8",
+      "dom_changed": true
+    },
+    {
+      "n": 2,
+      "before_fingerprint": "e36cb7ea7ba7aad6",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.38,
+        "target_index": "1",
+        "target_confidence": 0.96,
+        "target_description": "Add to Cart button"
+      }
+    },
+    {
+      "n": 3,
+      "before_fingerprint": "e36cb7ea7ba7aad6",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.59,
+        "target_index": "4",
+        "target_confidence": 0.3,
+        "target_description": "Cart link in navigation"
+      }
+    },
+    {
+      "n": 4,
+      "before_fingerprint": "f73c5a6627476b1f",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.58,
+        "target_index": "4",
+        "target_confidence": 0.36,
+        "target_description": "Cart link"
+      }
+    },
+    {
+      "n": 5,
+      "before_fingerprint": "f73c5a6627476b1f",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.31,
+        "target_index": "4",
+        "target_confidence": 0.65,
+        "target_description": "1 LB size radio button"
+      },
+      "executed": {
+        "success": true,
+        "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/variant-radios[1]/fieldset[2]/input[1]"
+      },
+      "after_fingerprint": "f73c5a6627476b1f",
+      "dom_changed": false
+    },
+    {
+      "n": 6,
+      "before_fingerprint": "e36cb7ea7ba7aad6",
+      "decision": {
+        "operation": "SCROLL_DOWN",
+        "operation_confidence": 0.51,
+        "target_index": "2",
+        "target_confidence": 0.21,
+        "target_description": "Cart link in the header"
+      }
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.deathwishcoffee.com/cart",
+    "landed": false,
+    "tree_bytes": 8053,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 4762,
+    "output": 879,
+    "calls": 6
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:19:47.907Z"
+}

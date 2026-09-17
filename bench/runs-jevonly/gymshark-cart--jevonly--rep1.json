@@ -1,0 +1,117 @@
+{
+  "run_id": "gymshark-cart--jevonly--rep1",
+  "task": "gymshark-cart",
+  "instruction": "Add the first available men's item in any in-stock size to the cart",
+  "site": "https://www.gymshark.com/collections/all-products/mens",
+  "verify_url": "https://www.gymshark.com/cart",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:25:00.541Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "4415ece22249a695",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.43,
+        "target_index": "37",
+        "target_confidence": 0.67,
+        "target": "link: Train 5\" Shorts"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/section[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/article[1]/div[1]/div[1]/d"
+      },
+      "after_fingerprint": "4415ece22249a695",
+      "dom_changed": false
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "4415ece22249a695",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.52,
+        "target_index": "37",
+        "target_confidence": 0.68,
+        "target": "link: Train 5\" Shorts"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/section[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/article[1]/div[1]/div[1]/d"
+      },
+      "after_fingerprint": "4415ece22249a695",
+      "dom_changed": false
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "4415ece22249a695",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.53,
+        "target_index": "37",
+        "target_confidence": 0.71,
+        "target": "link: Train 5\" Shorts"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/section[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/article[1]/div[1]/div[1]/d"
+      },
+      "after_fingerprint": "4415ece22249a695",
+      "dom_changed": false
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "4415ece22249a695",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.45,
+        "target_index": "37",
+        "target_confidence": 0.65,
+        "target": "link: Train 5\" Shorts"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/section[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/article[1]/div[1]/div[1]/d"
+      },
+      "after_fingerprint": "0957164f3215259e",
+      "dom_changed": true
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "0957164f3215259e",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.48,
+        "target_index": "37",
+        "target_confidence": 0.63,
+        "target": "link: Train 5\" Shorts"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/section[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/article[1]/div[1]/div[1]/d"
+      },
+      "after_fingerprint": "0957164f3215259e",
+      "dom_changed": false
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.gymshark.com/cart",
+    "landed": false,
+    "tree_bytes": 7422,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 7667,
+    "output": 1880,
+    "calls": 5
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:25:10.075Z"
+}

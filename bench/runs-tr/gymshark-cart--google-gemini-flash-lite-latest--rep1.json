@@ -1,0 +1,85 @@
+{
+  "run_id": "gymshark-cart--google-gemini-flash-lite-latest--rep1",
+  "task": "gymshark-cart",
+  "instruction": "Add the first available men's item in any in-stock size to the cart",
+  "site": "https://www.gymshark.com/collections/all-products/mens",
+  "verify_url": "https://www.gymshark.com/cart",
+  "framework": "stagehand+truereplay",
+  "model": "google/gemini-flash-lite-latest",
+  "started_at": "2026-09-17T19:11:06.137Z",
+  "truereplay": {
+    "run_verdict": "inconclusive",
+    "steps": [
+      {
+        "kind": "nav",
+        "action": "goto https://www.gymshark.com/collections/all-products/mens",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": null,
+          "confidence": "high",
+          "detail": "",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": null
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first available men's item in any in-stock size to the cart",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": "overlay",
+          "confidence": "heuristic",
+          "detail": "overlay:onetrust-pc-dark-filter ot-fade-in",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": true,
+          "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/a[1]"
+        }
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first available men's item in any in-stock size to the cart",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": "overlay",
+          "confidence": "heuristic",
+          "detail": "overlay:onetrust-pc-dark-filter ot-fade-in",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": true,
+          "message": "Action [click] performed successfully on selector: xpath=/html[1]/body[1]/div[1]/main[1]/div[4]/div[2]/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/a[1]"
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "url": "https://www.gymshark.com/cart",
+    "landed": false,
+    "empty_node": true,
+    "line_item": false,
+    "tree_bytes": 6360
+  },
+  "agreement": "inconclusive (TrueReplay: inconclusive)",
+  "errors": [],
+  "finished_at": "2026-09-17T19:11:55.254Z"
+}

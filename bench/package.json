@@ -1,0 +1,13 @@
+{
+  "name": "agent-write-bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "one": "node capture.mjs",
+    "all": "node runall.mjs"
+  },
+  "dependencies": {
+    "@browserbasehq/stagehand": "^4.1.0",
+    "zod": "^4.6.5"
+  }
+}

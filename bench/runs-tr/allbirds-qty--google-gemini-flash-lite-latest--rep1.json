@@ -1,0 +1,64 @@
+{
+  "run_id": "allbirds-qty--google-gemini-flash-lite-latest--rep1",
+  "task": "allbirds-qty",
+  "instruction": "Add the first available men's shoe to the cart, then change its quantity to 2",
+  "site": "https://www.allbirds.com/collections/mens-shoes",
+  "verify_url": "https://www.allbirds.com/cart",
+  "framework": "stagehand+truereplay",
+  "model": "google/gemini-flash-lite-latest",
+  "started_at": "2026-09-17T19:12:03.615Z",
+  "truereplay": {
+    "run_verdict": "inconclusive",
+    "steps": [
+      {
+        "kind": "nav",
+        "action": "goto https://www.allbirds.com/collections/mens-shoes",
+        "verdict": "inconclusive",
+        "settled": false,
+        "session": {
+          "obstruction": null,
+          "confidence": "high",
+          "detail": "",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": null
+      },
+      {
+        "kind": "write",
+        "action": "act: Add the first available men's shoe to the cart, then change its quantity to 2",
+        "verdict": "inconclusive",
+        "settled": true,
+        "session": {
+          "obstruction": "overlay",
+          "confidence": "heuristic",
+          "detail": "overlay:attentive_creative",
+          "checked": [
+            "blank",
+            "captcha",
+            "login-wall",
+            "overlay"
+          ]
+        },
+        "agent_claim": {
+          "success": false,
+          "message": "Failed to perform act: No action found"
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "url": "https://www.allbirds.com/cart",
+    "landed": false,
+    "empty_node": true,
+    "line_item": false,
+    "tree_bytes": 20898
+  },
+  "agreement": "inconclusive (TrueReplay: inconclusive)",
+  "errors": [],
+  "finished_at": "2026-09-17T19:12:20.014Z"
+}

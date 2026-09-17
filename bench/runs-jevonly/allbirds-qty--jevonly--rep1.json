@@ -1,0 +1,171 @@
+{
+  "run_id": "allbirds-qty--jevonly--rep1",
+  "task": "allbirds-qty",
+  "instruction": "Add the first available men's shoe to the cart, then change its quantity to 2",
+  "site": "https://www.allbirds.com/collections/mens-shoes",
+  "verify_url": "https://www.allbirds.com/cart",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:26:19.888Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "e4625825745f8db6",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 1,
+        "target_index": "29",
+        "target_confidence": 0.51,
+        "target": "link: MEN'S DASHER NZ Anthracite $140"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/a[1]"
+      },
+      "after_fingerprint": "e4625825745f8db6",
+      "dom_changed": false
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "e4625825745f8db6",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 1,
+        "target_index": "29",
+        "target_confidence": 0.48,
+        "target": "link: MEN'S DASHER NZ Anthracite $140"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/a[1]"
+      },
+      "after_fingerprint": "6a95d6777c8b97db",
+      "dom_changed": true
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "6a95d6777c8b97db",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.69,
+        "target_index": "16",
+        "target_confidence": 0.37,
+        "target": "button: Men's Dasher NZ - Anthracite (Dark Anthracite Sole)"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/button[1]"
+      },
+      "after_fingerprint": "f10088410e3b0917",
+      "dom_changed": true
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "f10088410e3b0917",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.61,
+        "target_index": "16",
+        "target_confidence": 0.37,
+        "target": "button: Men's Dasher NZ - Anthracite (Dark Anthracite Sole)"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/button[1]"
+      },
+      "after_fingerprint": "f10088410e3b0917",
+      "dom_changed": false
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "f10088410e3b0917",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.64,
+        "target_index": "20",
+        "target_confidence": 0.31,
+        "target": "button: Select size 8"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/aside[1]/div[3]/div[1]/ul[1]/li[1]/button[1]"
+      },
+      "after_fingerprint": "f10088410e3b0917",
+      "dom_changed": false
+    },
+    {
+      "n": 6,
+      "candidates": 40,
+      "before_fingerprint": "f10088410e3b0917",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.57,
+        "target_index": "16",
+        "target_confidence": 0.37,
+        "target": "button: Men's Dasher NZ - Anthracite (Dark Anthracite Sole)"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/button[1]"
+      },
+      "after_fingerprint": "f10088410e3b0917",
+      "dom_changed": false
+    },
+    {
+      "n": 7,
+      "candidates": 40,
+      "before_fingerprint": "f10088410e3b0917",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.58,
+        "target_index": "16",
+        "target_confidence": 0.31,
+        "target": "button: Men's Dasher NZ - Anthracite (Dark Anthracite Sole)"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/button[1]"
+      },
+      "after_fingerprint": "f3dd823432e70e0b",
+      "dom_changed": true
+    },
+    {
+      "n": 8,
+      "candidates": 40,
+      "before_fingerprint": "f3dd823432e70e0b",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.54,
+        "target_index": "20",
+        "target_confidence": 0.36,
+        "target": "button: Select size 8"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/aside[1]/div[3]/div[1]/ul[1]/li[1]/button[1]"
+      },
+      "after_fingerprint": "1608031e7467a8e4",
+      "dom_changed": true
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.allbirds.com/cart",
+    "landed": false,
+    "tree_bytes": 20927,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 13828,
+    "output": 3008,
+    "calls": 8
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:26:34.920Z"
+}

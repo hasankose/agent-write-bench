@@ -1,0 +1,117 @@
+{
+  "run_id": "allbirds-cart--jevonly--rep1",
+  "task": "allbirds-cart",
+  "instruction": "Add the first available men's shoe in any in-stock size to the cart",
+  "site": "https://www.allbirds.com/collections/mens-shoes",
+  "verify_url": "https://www.allbirds.com/cart",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:24:43.561Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "b8a89a32d8ad8ce6",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.98,
+        "target_index": "28",
+        "target_confidence": 0.43,
+        "target": "link: Men's Dasher NZ - Anthracite (Dark Anthracite Sole) Men's Dasher NZ - Anthracite (Dark Ant"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]"
+      },
+      "after_fingerprint": "b8a89a32d8ad8ce6",
+      "dom_changed": false
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "b8a89a32d8ad8ce6",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.97,
+        "target_index": "28",
+        "target_confidence": 0.44,
+        "target": "link: Men's Dasher NZ - Anthracite (Dark Anthracite Sole) Men's Dasher NZ - Anthracite (Dark Ant"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]"
+      },
+      "after_fingerprint": "d4902493eefb5003",
+      "dom_changed": true
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "d4902493eefb5003",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.96,
+        "target_index": "20",
+        "target_confidence": 0.81,
+        "target": "button: Select size 8"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/aside[1]/div[3]/div[1]/ul[1]/li[1]/button[1]"
+      },
+      "after_fingerprint": "f5439d213ffb528c",
+      "dom_changed": true
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "f5439d213ffb528c",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.32,
+        "target_index": "20",
+        "target_confidence": 0.5,
+        "target": "button: Select size 8"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/aside[1]/div[3]/div[1]/ul[1]/li[1]/button[1]"
+      },
+      "after_fingerprint": "f5439d213ffb528c",
+      "dom_changed": false
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "f5439d213ffb528c",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.41,
+        "target_index": "20",
+        "target_confidence": 0.47,
+        "target": "button: Select size 8"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[2]/aside[1]/div[3]/div[1]/ul[1]/li[1]/button[1]"
+      },
+      "after_fingerprint": "f5439d213ffb528c",
+      "dom_changed": false
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.allbirds.com/cart",
+    "landed": false,
+    "tree_bytes": 20932,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 8943,
+    "output": 1880,
+    "calls": 5
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:24:54.076Z"
+}

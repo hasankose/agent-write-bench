@@ -1,0 +1,135 @@
+{
+  "run_id": "deathwish-largest--jevonly--rep1",
+  "task": "deathwish-largest",
+  "instruction": "Add the first available coffee product in the largest available size to the cart",
+  "site": "https://www.deathwishcoffee.com/collections/coffee",
+  "verify_url": "https://www.deathwishcoffee.com/cart",
+  "framework": "jev-only (deterministic element table, no other model)",
+  "model": "jev-latest",
+  "observe_model": null,
+  "started_at": "2026-09-17T21:25:34.779Z",
+  "steps": [
+    {
+      "n": 1,
+      "candidates": 40,
+      "before_fingerprint": "55f9efabe38bb741",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.58,
+        "target_index": "31",
+        "target_confidence": 0.54,
+        "target": "button: ADD TO CART"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]"
+      },
+      "after_fingerprint": "3c7e61399b1d80f4",
+      "dom_changed": true
+    },
+    {
+      "n": 2,
+      "candidates": 40,
+      "before_fingerprint": "5e6e512da30d4131",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.91,
+        "target_index": "25",
+        "target_confidence": 0.74,
+        "target": "button: ADD TO CART"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/div[6]/product-form[1]/form[1]/div[1"
+      },
+      "after_fingerprint": "66d0386996173fd0",
+      "dom_changed": true
+    },
+    {
+      "n": 3,
+      "candidates": 40,
+      "before_fingerprint": "66d0386996173fd0",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.53,
+        "target_index": "23",
+        "target_confidence": 0.72,
+        "target": "radio: 5 LBS"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/section[1]/section[1]/div[1]/div[3]/product-info[1]/variant-radios[1]/fieldset[2]/input["
+      },
+      "after_fingerprint": "2be2f28d769cebfb",
+      "dom_changed": true
+    },
+    {
+      "n": 4,
+      "candidates": 40,
+      "before_fingerprint": "4d97331cd62d355a",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.83,
+        "target_index": "1",
+        "target_confidence": 0.28,
+        "target": "button: COFFEE"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[2]/sticky-header[1]/header[1]/nav[1]/ul[1]/li[1]/header-menu[1]/details[1]/summary[1]"
+      },
+      "after_fingerprint": "f851a40197540509",
+      "dom_changed": true
+    },
+    {
+      "n": 5,
+      "candidates": 40,
+      "before_fingerprint": "f851a40197540509",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.91,
+        "target_index": "1",
+        "target_confidence": 0.33,
+        "target": "button: COFFEE"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/div[2]/sticky-header[1]/header[1]/nav[1]/ul[1]/li[1]/header-menu[1]/details[1]/summary[1]"
+      },
+      "after_fingerprint": "f2f04352af1649c7",
+      "dom_changed": true
+    },
+    {
+      "n": 6,
+      "candidates": 40,
+      "before_fingerprint": "9e139498ef926a18",
+      "decision": {
+        "operation": "CLICK",
+        "operation_confidence": 0.66,
+        "target_index": "32",
+        "target_confidence": 0.57,
+        "target": "button: ADD TO CART"
+      },
+      "executed": {
+        "clicked": true,
+        "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]"
+      },
+      "after_fingerprint": "1896539661f23385",
+      "dom_changed": true
+    }
+  ],
+  "ground_truth": {
+    "url": "https://www.deathwishcoffee.com/cart",
+    "landed": true,
+    "tree_bytes": 12173,
+    "attempts": 1
+  },
+  "jev_usage": {
+    "input": 9732,
+    "output": 2254,
+    "calls": 6
+  },
+  "errors": [],
+  "bucket": null,
+  "finished_at": "2026-09-17T21:25:58.386Z"
+}
