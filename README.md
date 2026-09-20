@@ -67,19 +67,15 @@ node summarize.mjs                                     # regenerate results.md
 |---|---|
 | `capture.mjs` | Stagehand + any allowlisted model (`anthropic/claude-sonnet-5`, `google/gemini-flash-lite-latest`, …) |
 | `capture-jevonly.mjs` | [TypeSafe Jev](https://docs.typesafe.ai) only — element table built deterministically from the accessibility tree, no other model anywhere |
-| `capture-tr.mjs` | Stagehand wrapped in [TrueFact](https://github.com/solozerolabs/TrueFact), recording its verdict next to independent ground truth. **Written against the old TrueReplay API and not yet updated**, see below |
+| `capture-tr.mjs` | [TrueFact](https://github.com/solozerolabs/TrueFact), recording its verdict next to independent ground truth read in a second browser |
 
-`capture-tr.mjs` does not currently run. TrueReplay was renamed to
-[TrueFact](https://github.com/solozerolabs/TrueFact) and its API changed: the
-harness imports `withReplay` from `truereplay`, which no longer exists. TrueFact
-now installs from npm and is driven through `launch()`:
+`capture-tr.mjs` drives TrueFact rather than Stagehand directly, because TrueFact
+owns the browser so its network channel works with no port to configure. Ground
+truth is read in a second, separate browser that TrueFact never sees, so it
+cannot be credited with a verdict it did not reach on its own.
 
-```bash
-npm install truefact
-```
-
-Porting the harness is open work. The recorded runs in `bench/runs-tr/` are from
-the old API and are left exactly as captured.
+**Not yet re-run.** The harness was ported from the old TrueReplay API and the
+recorded runs in `bench/runs-tr/` predate the port. Treat them as historical.
 
 Every other harness runs on `npm install` alone.
 

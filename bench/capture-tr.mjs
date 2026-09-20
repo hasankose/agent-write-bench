@@ -1,17 +1,12 @@
-// NOTE: written against TrueReplay, which was renamed to TrueFact and changed
-// its API. `withReplay` no longer exists; TrueFact is driven through `launch()`.
-// This harness does not run as written. Left in place because the recorded runs
-// in runs-tr/ were captured with it.
-//
-// Cross-check harness: runs the same tasks through TrueReplay's wrapper and
+// Cross-check harness: runs the same tasks through TrueFact and
 // records ITS verdict alongside our own independent ground truth.
 //
 // This does not replace capture.mjs. capture.mjs is the camera that produced
-// results.md. This asks a different question: when TrueReplay says "landed",
+// results.md. This asks a different question: when TrueFact says "landed",
 // is the item actually in the cart?
 
-import { localBrowser, Stagehand } from "@browserbasehq/stagehand";
-import { withReplay } from "truereplay";
+import { chromium } from "playwright-core";
+import { launch } from "truefact";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -54,27 +49,25 @@ const runId = `${task.id}--${modelSlug}--rep${rep}`;
 
 const record = {
   run_id: runId, task: task.id, instruction: task.instruction, site: task.site,
-  verify_url: task.verify_url ?? null, framework: "stagehand+truereplay", model: MODEL,
+  verify_url: task.verify_url ?? null, framework: "stagehand+truefact", model: MODEL,
   started_at: new Date().toISOString(),
-  truereplay: null,        // what TrueReplay concluded
+  truefact: null,          // what TrueFact concluded
   ground_truth: null,      // what the cart page says — checked independently
   agreement: null,         // do they match?
   errors: [],
 };
 
-let browser, stagehand;
+let tf, verifier;
 try {
-  browser = await localBrowser.launch({ headless: HEADLESS });
-  stagehand = await Stagehand.create({ browser, model: { modelName: MODEL, apiKey } });
-  const wrapped = withReplay(stagehand, { waitMs: 5000 });
-  const [rawPage] = await browser.context.pages();
+  // TrueFact owns the browser, so the network channel works without configuring a port.
+  tf = await launch({ headless: HEADLESS, model: { modelName: MODEL, apiKey } });
 
-  await wrapped.page.goto(task.site);
+  await tf.page.goto(task.site);
 
   let lastSelector = null;
   for (let i = 1; i <= MAX_STEPS; i++) {
     let r;
-    try { r = await wrapped.act(task.instruction); }
+    try { r = await tf.act(task.instruction); }
     catch (e) { record.errors.push({ stage: `act:${i}`, error: String(e) }); break; }
 
     const sel = (String(r?.data?.message ?? "").match(/xpath=\S+/) || [null])[0];
@@ -84,10 +77,10 @@ try {
     if (i < MAX_STEPS) await sleep(THROTTLE_MS);
   }
 
-  // TrueReplay's own conclusion, before we look at anything ourselves.
-  record.truereplay = {
-    run_verdict: wrapped.replay.verdict,
-    steps: wrapped.replay.steps.map((s) => ({
+  // TrueFact's own conclusion, before we look at anything ourselves.
+  record.truefact = {
+    run_verdict: tf.replay.verdict,
+    steps: tf.replay.steps.map((s) => ({
       kind: s.kind, action: s.action, verdict: s.verdict,
       settled: s.evidence?.settled ?? null,
       session: s.evidence?.session ?? null,
@@ -96,40 +89,44 @@ try {
   };
 
   // Ground truth, read the way capture.mjs reads it: go to the page where the
-  // result actually lives and look. TrueReplay never sees this.
+  // result actually lives and look. A separate browser, so TrueFact never sees it
+  // and cannot be credited with a verdict it did not reach on its own.
   if (task.verify_url) {
     try {
+      verifier = await chromium.launch({ headless: HEADLESS });
+      const rawPage = await verifier.newPage();
+      const cookies = await tf.page.context().cookies();
+      await rawPage.context().addCookies(cookies);
       await rawPage.goto(task.verify_url);
       await rawPage.waitForLoadState("load").catch(() => {});
-      const snap = await rawPage.snapshot();
-      const tree = String(snap?.formattedTree ?? "");
-      const lines = tree.split("\n");
+      const tree = await rawPage.evaluate(() => document.body.innerText);
+      const lines = String(tree).split("\n");
       const emptyNode = lines.some((l) => /(heading|StaticText|paragraph):.*\b(cart|bag)\b.*\bis empty\b/i.test(l));
       const lineItem = lines.some((l) => /(subtotal|order total)/i.test(l));
       record.ground_truth = {
         url: task.verify_url,
         landed: emptyNode && !lineItem ? false : lineItem && !emptyNode ? true : null,
-        empty_node: emptyNode, line_item: lineItem, tree_bytes: tree.length,
+        empty_node: emptyNode, line_item: lineItem, text_bytes: String(tree).length,
       };
     } catch (e) { record.errors.push({ stage: "verify", error: String(e) }); }
   }
 
-  const tr = record.truereplay.run_verdict;
+  const tr = record.truefact.run_verdict;
   const gt = record.ground_truth?.landed;
   record.agreement =
     gt === null || gt === undefined ? "unknown"
     : tr === "landed" && gt === true ? "agree — both landed"
     : tr === "did-not-land" && gt === false ? "agree — both did not land"
-    : tr === "landed" && gt === false ? "DISAGREE — TrueReplay said landed, cart is empty"
-    : tr === "did-not-land" && gt === true ? "DISAGREE — TrueReplay said did-not-land, item is in cart"
-    : `inconclusive (TrueReplay: ${tr})`;
+    : tr === "landed" && gt === false ? "DISAGREE — TrueFact said landed, cart is empty"
+    : tr === "did-not-land" && gt === true ? "DISAGREE — TrueFact said did-not-land, item is in cart"
+    : `inconclusive (TrueFact: ${tr})`;
 } catch (e) {
   record.errors.push({ stage: "setup", error: String(e) });
 } finally {
   record.finished_at = new Date().toISOString();
-  try { await stagehand?.close(); } catch {}
-  try { await browser?.close(); } catch {}
+  try { await tf?.close(); } catch {}
+  try { await verifier?.close(); } catch {}
 }
 
 await writeFile(join(RUNS_DIR, `${runId}.json`), JSON.stringify(record, null, 2));
-console.log(`${runId}  truereplay=${record.truereplay?.run_verdict ?? "—"}  cart=${record.ground_truth?.landed ?? "—"}  ${record.agreement}`);
+console.log(`${runId}  truefact=${record.truefact?.run_verdict ?? "—"}  cart=${record.ground_truth?.landed ?? "—"}  ${record.agreement}`);
