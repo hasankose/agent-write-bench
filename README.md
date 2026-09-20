@@ -67,16 +67,19 @@ node summarize.mjs                                     # regenerate results.md
 |---|---|
 | `capture.mjs` | Stagehand + any allowlisted model (`anthropic/claude-sonnet-5`, `google/gemini-flash-lite-latest`, …) |
 | `capture-jevonly.mjs` | [TypeSafe Jev](https://docs.typesafe.ai) only — element table built deterministically from the accessibility tree, no other model anywhere |
-| `capture-tr.mjs` | Stagehand wrapped in [TrueReplay](https://github.com/solozerolabs/TrueReplay), recording its verdict next to independent ground truth — needs the extra install below |
+| `capture-tr.mjs` | Stagehand wrapped in [TrueFact](https://github.com/solozerolabs/TrueFact), recording its verdict next to independent ground truth. **Written against the old TrueReplay API and not yet updated**, see below |
 
-`capture-tr.mjs` is the only harness with a dependency outside npm. TrueReplay is
-not published and ships no build, so it has to be built from source:
+`capture-tr.mjs` does not currently run. TrueReplay was renamed to
+[TrueFact](https://github.com/solozerolabs/TrueFact) and its API changed: the
+harness imports `withReplay` from `truereplay`, which no longer exists. TrueFact
+now installs from npm and is driven through `launch()`:
 
 ```bash
-git clone https://github.com/solozerolabs/TrueReplay.git
-cd TrueReplay && npm install && npm run build
-cd /path/to/agent-write-bench/bench && npm install ../../TrueReplay
+npm install truefact
 ```
+
+Porting the harness is open work. The recorded runs in `bench/runs-tr/` are from
+the old API and are left exactly as captured.
 
 Every other harness runs on `npm install` alone.
 
@@ -109,3 +112,13 @@ Never merge rows from different models.
 ## Status
 
 One rep per task, nine tasks, three sites, four model configurations. The control passes on all of them. **Nothing here is a rate yet.**
+
+## The other side of this
+
+This measures how often the problem happens. It does not fix it.
+
+[TrueFact](https://github.com/solozerolabs/TrueFact) is the verifier: it reads the
+page and the network after every write and returns landed, did not land, or
+inconclusive. Its own benchmark runs on rigged fixtures where the failures are
+known in advance, which measures the instrument rather than the world. The two
+answer different questions and neither substitutes for the other.

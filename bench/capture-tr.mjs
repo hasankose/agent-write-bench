@@ -1,3 +1,8 @@
+// NOTE: written against TrueReplay, which was renamed to TrueFact and changed
+// its API. `withReplay` no longer exists; TrueFact is driven through `launch()`.
+// This harness does not run as written. Left in place because the recorded runs
+// in runs-tr/ were captured with it.
+//
 // Cross-check harness: runs the same tasks through TrueReplay's wrapper and
 // records ITS verdict alongside our own independent ground truth.
 //
